@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eldoria - RPG de Tabuleiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =========================
+         TELA INICIAL
+    ========================== -->
+    <section id="start-screen" class="screen active">
+        <div class="start-content">
+            <div class="start-hero-image" aria-hidden="true">
+                <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.21.jpeg" alt="">
+            </div>
+            <div class="start-overlay"></div>
+            <div class="start-front">
+                <div class="game-symbol">✦</div>
+                <p class="subtitle">RPG DE TABULEIRO</p>
+                <h1>ELDORIA</h1>
+                <h2>O Vingador Ambulante</h2>
+                <p class="intro">
+                    Um pistoleiro solitário. Uma horda de aberrações.
+                    Uma ameaça que pode destruir Eldoria.
+                </p>
+                <div class="start-gunslinger">
+                    <div>
+                        <span>HERÓI</span>
+                        <strong>GUNSLINGER</strong>
+                        <small>O Vingador Ambulante</small>
+                    </div>
+                </div>
+                <div class="start-buttons">
+                    <button id="start-button" class="main-button">INICIAR JORNADA</button>
+                    <button id="tutorial-button" class="tutorial-button">COMO JOGAR</button>
+                </div>
+                <div class="credits">Sofia&nbsp;&nbsp;•&nbsp;&nbsp;Giovanni&nbsp;&nbsp;•&nbsp;&nbsp;Caio&nbsp;&nbsp;•&nbsp;&nbsp;1°TIE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         ESCOLHA DE HABILIDADE
+    ========================== -->
+    <section id="character-screen" class="screen">
+        <div class="selection-container">
+            <p class="subtitle">ESCOLHA A HABILIDADE DO SEU HERÓI</p>
+            <h1>GUNSLINGER</h1>
+            <p class="selection-text">
+                Essa habilidade ficará ativa de forma contínua até que você morra ou vença todas as fases.
+            </p>
+
+            <div id="skills-grid" class="character-grid">
+
+                <button class="character-card" data-skill="guerreiro">
+                    <div class="character-icon warrior-icon"></div>
+                    <h2>Golpe Brutal</h2>
+                    <span>HERANÇA DO GUERREIRO</span>
+                    <div class="character-stats">
+                        <p>🔥 Efeito: <strong>1.8x de Dano Físico</strong></p>
+                        <p>⚔️ Estilo: <strong>Ataque Pesado Devastador</strong></p>
+                    </div>
+                    <small>Força bruta canalizada através dos revólveres.</small>
+                </button>
+
+                <button class="character-card" data-skill="arqueiro">
+                    <div class="character-icon archer-icon"></div>
+                    <h2>Flecha Precisa</h2>
+                    <span>HERANÇA DA ARQUEIRA</span>
+                    <div class="character-stats">
+                        <p>🎯 Efeito: <strong>2.0x de Dano Crítico</strong></p>
+                        <p>👁️ Estilo: <strong>Disparo de Mira Certeira</strong></p>
+                    </div>
+                    <small>Foco total no ponto fraco do inimigo.</small>
+                </button>
+
+                <button class="character-card" data-skill="mago">
+                    <div class="character-icon mage-icon"></div>
+                    <h2>Chama Arcana</h2>
+                    <span>HERANÇA DO MAGO</span>
+                    <div class="character-stats">
+                        <p>✨ Efeito: <strong>2.2x de Dano Elemental</strong></p>
+                        <p>🔮 Estilo: <strong>Munição Encantada</strong></p>
+                    </div>
+                    <small>Projéteis carregados com magia ancestral.</small>
+                </button>
+
+                <button class="character-card" data-skill="paladino">
+                    <div class="character-icon paladin-icon"></div>
+                    <h2>Bênção</h2>
+                    <span>HERANÇA DO PALADINO</span>
+                    <div class="character-stats">
+                        <p>🛡️ Efeito: <strong>1.5x Dano + Cura Residual</strong></p>
+                        <p>✝️ Estilo: <strong>Proteção Sagrada</strong></p>
+                    </div>
+                    <small>Poder sagrado que fere o mal e fortalece o herói.</small>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         TELA DE LOADING
+    ========================== -->
+    <section id="loading-screen" class="screen">
+        <div class="loading-container">
+            <p class="subtitle">PREPARANDO O COMBATE</p>
+            <h1>O CONFRONTO SE APROXIMA</h1>
+            
+            <div class="loading-showcase">
+                <div class="showcase-card hero-showcase">
+                    <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.21.jpeg" alt="Gunslinger">
+                    <h3>Gunslinger</h3>
+                    <p>O Vingador Ambulante</p>
+                </div>
+
+                <div class="loading-vs">VS</div>
+
+                <div class="showcase-card monsters-showcase">
+                    <div class="monster-preview-grid">
+                        <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.21 (1).jpeg" alt="Esqueleto">
+                        <img src="Imagens/Encourado_02.webp" alt="Encourado">
+                        <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.20 (3).jpeg" alt="Besta Reptiliana">
+                        <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.20 (2).jpeg" alt="Morcego Gigante">
+                        <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.20 (1).jpeg" alt="Homem-Peixe">
+                        <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.20.jpeg" alt="Lobisomem">
+                    </div>
+                    <h3>Horda das Sombras</h3>
+                    <p>Monstros e Chefões de Eldoria</p>
+                </div>
+            </div>
+
+            <div class="loading-bar-container">
+                <div id="loading-bar" class="loading-bar-fill"></div>
+            </div>
+            <p id="loading-timer" class="loading-timer-text">Entrando em campo em 5s...</p>
+        </div>
+    </section>
+
+    <!-- =========================
+         JOGO
+    ========================== -->
+    <main id="game-screen" class="game-screen">
+
+        <header class="game-header">
+            <div>
+                <p class="small-label">ELDORIA</p>
+                <h2 id="phase-name">Cavernas Sinistras</h2>
+            </div>
+
+            <div class="phase-info">
+                <span>FASE</span>
+                <strong id="phase-number">1 / 6</strong>
+            </div>
+
+            <button id="restart-button" class="restart-button">
+                ↻ Reiniciar
+            </button>
+        </header>
+
+        <section class="game-layout">
+
+            <aside class="player-panel">
+                <div class="player-avatar">
+                    <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.21.jpeg" alt="Gunslinger">
+                </div>
+
+                <div class="player-name">
+                    <span id="player-class">VINGADOR AMBULANTE</span>
+                    <h2 id="player-name">Gunslinger</h2>
+                </div>
+
+                <div class="level">
+                    NÍVEL <strong id="player-level">1</strong>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-title">
+                        <span>VIDA</span>
+                        <span id="hp-text">120 / 120</span>
+                    </div>
+                    <div class="bar">
+                        <div id="hp-bar" class="bar-fill hp-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-title">
+                        <span>EXPERIÊNCIA</span>
+                        <span id="xp-text">0 / 100</span>
+                    </div>
+                    <div class="bar">
+                        <div id="xp-bar" class="bar-fill xp-fill"></div>
+                    </div>
+                </div>
+
+                <div class="attributes">
+                    <div>
+                        <span>⚔</span>
+                        <strong id="attack-value">22</strong>
+                        <small>Ataque</small>
+                    </div>
+
+                    <div>
+                        <span>🛡</span>
+                        <strong id="defense-value">12</strong>
+                        <small>Defesa</small>
+                    </div>
+
+                    <div>
+                        <span>◈</span>
+                        <strong id="coins-value">20</strong>
+                        <small>Moedas</small>
+                    </div>
+
+                    <div>
+                        <span>✚</span>
+                        <strong id="potions-value">3</strong>
+                        <small>Poções</small>
+                    </div>
+                </div>
+
+                <div class="shop-panel">
+                    <p class="small-label">LOJA DE MOEDAS</p>
+                    <button id="buy-heal-button" class="shop-button">
+                        💖 Cura Total (50 ◈)
+                    </button>
+                    <button id="buy-hitkill-button" class="shop-button hitkill-button">
+                        ⚡ Hit Kill Geral (150 ◈)
+                    </button>
+                </div>
+
+                <div class="equipment">
+                    <p class="small-label">EQUIPAMENTO</p>
+                    <div class="equipment-item">
+                        <span>⚔</span>
+                        <div>
+                            <strong id="weapon-name">Revólver Modificado</strong>
+                            <small id="weapon-level">Nível 1</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objective">
+                    <p class="small-label">HABILIDADE ATIVA</p>
+                    <p id="active-skill-display" style="color: var(--gold-light); font-weight: bold; margin-top: 5px;">---</p>
+                    <p class="small-label" style="margin-top: 15px;">OBJETIVO</p>
+                    <p id="objective-text">Atravesse o caminho e derrote o chefe.</p>
+                </div>
+            </aside>
+
+            <section class="board-area">
+                <div class="board-top">
+                    <div>
+                        <p class="small-label">JORNADA</p>
+                        <h3 id="turn-text">Seu turno</h3>
+                    </div>
+
+                    <div class="dice-area">
+                        <div id="dice" class="dice">1</div>
+                        <button id="roll-button" class="roll-button">ROLAR DADO</button>
+                    </div>
+                </div>
+
+                <div id="board" class="board"></div>
+
+                <div class="legend">
+                    <span><i class="legend-player"></i> Você</span>
+                    <span><i class="legend-enemy"></i> Inimigo</span>
+                    <span><i class="legend-treasure"></i> Tesouro</span>
+                    <span><i class="legend-heal"></i> Cura</span>
+                    <span><i class="legend-trap"></i> Armadilha</span>
+                </div>
+
+                <div id="game-log" class="game-log">
+                    <p>A jornada começou.</p>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- =========================
+         MODAL DE COMBATE
+    ========================== -->
+    <div id="battle-modal" class="modal">
+        <div class="battle-window">
+
+            <div class="battle-header">
+                <div>
+                    <p class="small-label">COMBATE</p>
+                    <h2 id="enemy-name">Inimigo</h2>
+                </div>
+                <span id="enemy-type">INIMIGO</span>
+            </div>
+
+            <div class="battle-arena">
+                <div class="fighter player-fighter">
+                    <div class="fighter-avatar">
+                        <img src="Imagens/WhatsApp Image 2026-10-03 at 16.32.21.jpeg" alt="Gunslinger">
+                    </div>
+                    <h3 id="battle-player-name">Gunslinger</h3>
+                    <div class="battle-hp">
+                        <div id="battle-player-hp"></div>
+                    </div>
+                    <span id="battle-player-hp-text">120 / 120</span>
+                </div>
+
+                <div class="versus">VS</div>
+
+                <div class="fighter enemy-fighter">
+                    <div class="fighter-avatar enemy-avatar">
+                        <img id="enemy-img-display" src="" alt="Inimigo">
+                    </div>
+                    <h3 id="battle-enemy-name">Monstro</h3>
+                    <div class="battle-hp">
+                        <div id="battle-enemy-hp"></div>
+                    </div>
+                    <span id="battle-enemy-hp-text">50 / 50</span>
+                </div>
+            </div>
+
+            <div class="battle-log" id="battle-log">
+                O inimigo está diante de você.
+            </div>
+
+            <div class="battle-actions">
+                <button id="attack-button">⚔ ATACAR</button>
+                <button id="defend-button">🛡 DEFENDER</button>
+                <button id="skill-button">✦ HABILIDADE</button>
+                <button id="potion-button">✚ POÇÃO</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =========================
+         MODAL DE EVENTO
+    ========================== -->
+    <div id="event-modal" class="modal">
+        <div class="event-window">
+            <p class="small-label" id="event-type">EVENTO</p>
+            <h2 id="event-title">Tesouro encontrado</h2>
+            <p id="event-description">Você encontrou alguma coisa.</p>
+            <div id="modal-actions" class="modal-actions">
+                <button id="event-button" class="main-button">CONTINUAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================
+         TRANSIÇÃO DE FASE
+    ========================== -->
+    <div id="phase-loading" class="phase-loading" aria-hidden="true">
+        <div class="phase-loading-box">
+            <div class="phase-loading-symbol">✦</div>
+            <p class="small-label">JORNADA CONTINUA</p>
+            <h2 id="phase-loading-title">Preparando a próxima fase...</h2>
+            <p id="phase-loading-text">As sombras estão ficando mais fortes.</p>
+            <div class="phase-loading-bar">
+                <div id="phase-loading-fill"></div>
+            </div>
+            <p id="phase-loading-percent">0%</p>
+        </div>
+    </div>
+
+    <!-- =========================
+         TELA FINAL
+    ========================== -->
+    <section id="end-screen" class="screen">
+        <div class="end-content">
+            <div id="end-symbol">✦</div>
+            <p class="subtitle" id="end-subtitle">FIM DA JORNADA</p>
+            <h1 id="end-title">VITÓRIA</h1>
+            <p id="end-message">Eldoria foi salva.</p>
+
+            <div class="final-stats">
+                <div>
+                    <strong id="final-level">1</strong>
+                    <span>Nível</span>
+                </div>
+                <div>
+                    <strong id="final-enemies">0</strong>
+                    <span>Inimigos</span>
+                </div>
+                <div>
+                    <strong id="final-coins">0</strong>
+                    <span>Moedas</span>
+                </div>
+            </div>
+
+            <button id="play-again-button" class="main-button">JOGAR NOVAMENTE</button>
+        </div>
+    </section>
+
+    <!-- =========================
+         TUTORIAL VISUAL
+    ========================== -->
+    <div id="tutorial-modal" class="modal tutorial-modal">
+        <div class="tutorial-window">
+            <button id="tutorial-close" class="tutorial-close" aria-label="Fechar">×</button>
+            <p class="small-label">GUIA PARA INICIANTES</p>
+            <h2>COMO JOGAR</h2>
+            <p class="tutorial-intro">É bem simples: você rola o dado, anda pelo tabuleiro, encontra inimigos e luta. Siga os exemplos abaixo.</p>
+
+            <div class="tutorial-step">
+                <div class="tutorial-number">1</div>
+                <div>
+                    <h3>Escolha uma habilidade</h3>
+                    <p>Depois de clicar em <b>INICIAR JORNADA</b>, escolha uma das três habilidades.</p>
+                    <div class="tutorial-visual skill-visual">
+                        <div class="fake-card">🔥<b>Golpe Brutal</b><small>CLIQUE AQUI</small></div>
+                        <div class="fake-card">🎯<b>Flecha Precisa</b><small>ou aqui</small></div>
+                        <div class="fake-card">✨<b>Chama Arcana</b><small>ou aqui</small></div>
+                        <div class="fake-card">💧<b>Benção</b><small>ou aqui</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-number">2</div>
+                <div>
+                    <h3>Role o dado para andar</h3>
+                    <p>No tabuleiro, clique em <b>ROLAR DADO</b>. O número sorteado diz quantas casas você vai andar.</p>
+                    <div class="tutorial-visual board-visual">
+                        <div class="fake-board">
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                            <span>7</span><span class="fake-player">🤠</span><span>9</span><span>10</span><span class="fake-enemy">☠</span><span>12</span>
+                        </div>
+                        <div class="fake-roll">🎲<strong>ROLAR DADO</strong><b class="click-arrow">← CLIQUE AQUI</b></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-number">3</div>
+                <div>
+                    <h3>Quando encontrar um inimigo, começa o combate</h3>
+                    <p>Você verá a foto e o nome do inimigo. Preste atenção: cada fase pode trazer inimigos diferentes.</p>
+                    <div class="tutorial-visual fight-visual">
+                        <div class="fake-fighter">🤠<b>VOCÊ</b><small>120 / 120 VIDA</small></div>
+                        <strong class="fake-vs">VS</strong>
+                        <div class="fake-fighter enemy">☠<b>INIMIGO</b><small>55 / 55 VIDA</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-number">4</div>
+                <div>
+                    <h3>Escolha o que fazer no combate</h3>
+                    <p><b>ATACAR</b> causa dano. <b>DEFENDER</b> reduz o próximo ataque. <b>HABILIDADE</b> usa seu poder especial. <b>POÇÃO</b> recupera vida.</p>
+                    <div class="tutorial-visual action-visual">
+                        <button>⚔ ATACAR</button><button>🛡 DEFENDER</button><button>✦ HABILIDADE</button><button>✚ POÇÃO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-number">5</div>
+                <div>
+                    <h3>Use suas moedas na Loja do Painel Lateral</h3>
+                    <p>Acumule moedas em baús e combates para comprar vantagens estratégicas:</p>
+                    <div class="tutorial-visual shop-visual" style="display: flex; flex-direction: column; gap: 8px;">
+                        <button class="shop-button" style="background:#1c2d20; border:1px solid #2da861; color:#72f0a1; padding:10px; font-weight:bold; width:100%; text-align:left;">💖 Cura Total (50 ◈) - Recupera 100% da sua Vida. Pode ser comprada 1 vez a cada fase.</button>
+                        <button class="shop-button hitkill-button" style="background:#3b1c1c; border:1px solid #d75a5a; color:#ff8080; padding:10px; font-weight:bold; width:100%; text-align:left;">⚡ Hit Kill Geral (150 ◈) - Derrota instantaneamente a fase atual inteira (ou combate atual e pula para a Coroa). USO ÚNICO por partida!</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-number">6</div>
+                <div>
+                    <h3>Derrote o inimigo para avançar</h3>
+                    <p>Depois da vitória, aparecerá o botão <b>PRÓXIMA FASE</b>. Clique nele para continuar. Cada fase deixa os inimigos mais fortes.</p>
+                    <div class="tutorial-visual next-visual">
+                        <div class="fake-message">✓ INIMIGO DERROTADO!<br><small>A próxima fase será mais difícil.</small></div>
+                        <button>PRÓXIMA FASE</button>
+                        <b class="click-arrow">← CLIQUE AQUI PARA CONTINUAR</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-tip"><b>💡 DICA:</b> acompanhe sua VIDA, use moedas com sabedoria na loja e observe as mensagens do combate para saber exatamente o que aconteceu.</div>
+            <button id="tutorial-ok" class="main-button">ENTENDI! VAMOS JOGAR</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
